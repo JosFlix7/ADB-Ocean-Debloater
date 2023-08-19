@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.6.2 [THE BETTER SCRIPT UPDATE - PART 2 -]
+SET Ver=v5.6.3 [THE BETTER SCRIPT UPDATE - PART 2 -]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
