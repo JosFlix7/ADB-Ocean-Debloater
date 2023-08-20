@@ -621,6 +621,11 @@ SET app=com.android.fmradio
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
+SET app=com.android.fmradio.recordings
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 :CoreGallery
 %.%
 %LineCut%
@@ -3210,6 +3215,11 @@ SET app=org.protonaosp.deviceconfig
 %C.CP% %app% >nul 2>nul
 %C.D% %app% >nul 2>nul
 
+SET app=org.protonaosp.deviceconfig.auto_generated_rro_product__
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
+
 echo %T.U% Apps y paquetes restantes de ROMs...
 SET app=com.android.emergency.auto_generated_rro_product__
 %C.FS% %app% >nul 2>nul
@@ -3439,6 +3449,7 @@ echo 	- Adicion opcional de LineageOS Updater (y ROMs que usen el mismo nombre d
 echo 	- Adicion opcional de los Gestos Moto (LineageOS Settings Device).
 echo 	- Adicion de Proton Device Config en ExtremeDebloat (La mayoria de ROMs lo tienen).
 echo 	- Adicion de paquetes extras de ArrowOS 11.
+echo 	- Adicion de paquetes extras de LineageOS 20 QPR3 (12 Agosto 2023).
 echo 	- Adicion de Qualcomm WFD Service.
 echo 	- Correcciones menores en el bat.
 %CatCut%
