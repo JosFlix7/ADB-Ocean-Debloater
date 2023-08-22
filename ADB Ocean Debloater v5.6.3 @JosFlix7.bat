@@ -3203,22 +3203,22 @@ SET app=com.android.customization.themes
 %C.CP% %app% >nul 2>nul
 %C.D% %app% >nul 2>nul
 
-echo %T.D% LineageOS Profiles
+echo %T.U% LineageOS Profiles
 SET app=org.lineageos.profiles
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.D% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
 
-echo %T.D% Proton AOSP Device Config
+echo %T.U% Proton AOSP Device Config
 SET app=org.protonaosp.deviceconfig
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.D% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
 
 SET app=org.protonaosp.deviceconfig.auto_generated_rro_product__
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.D% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
 
 echo %T.U% Apps y paquetes restantes de ROMs...
 SET app=com.android.emergency.auto_generated_rro_product__
