@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.6.3 [THE BETTER SCRIPT UPDATE - PART 2 -]
+SET Ver=v5.6.4 [5.6: THE BETTER SCRIPT UPDATE - PART 2 -]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
@@ -615,11 +615,11 @@ echo %Q.U% RadioFM?
 	if ERRORLEVEL 1 goto CoreFM1
 
 :CoreFM1
-echo %T.U% RadioFM
+echo %T.D% y %T.U% RadioFM
 SET app=com.android.fmradio
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.android.fmradio.recordings
 %C.FS% %app% >nul 2>nul
@@ -923,7 +923,7 @@ SET app=com.android.bookmarkprovider
 SET app=com.android.wallpaperbackup
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.android.wallpapercropper
 %C.FS% %app% >nul 2>nul
@@ -959,11 +959,11 @@ echo %Q.U% Gestos Moto? (Lineage Settings Device, usado por ROMs con Gestos Moto
 	if ERRORLEVEL 1 goto LineageMotoGestures1
 
 :LineageMotoGestures1
-echo %T.U% Gestos Moto
+echo %T.D% Gestos Moto
 SET app=org.lineageos.settings.device
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 :LineageSeedvault
 %.%
@@ -3452,6 +3452,10 @@ echo 	- Adicion de paquetes extras de ArrowOS 11.
 echo 	- Adicion de paquetes extras de LineageOS 20 QPR3 (12 Agosto 2023).
 echo 	- Adicion de Qualcomm WFD Service.
 echo 	- Correcciones menores en el bat.
+echo [5.6.4]
+echo 	- Ahora se deshabilitan RadioFM, WallpaperBackup y LOS Gestos moto en vez de
+echo 	desinstalar para evitar problemas (Siempre intentan generar datos, vease el primer
+echo 	cambio de la version 5.3.1).
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
