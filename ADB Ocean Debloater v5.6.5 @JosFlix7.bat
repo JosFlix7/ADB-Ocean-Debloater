@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.6.4 [5.6: THE BETTER SCRIPT UPDATE - PART 2 -]
+SET Ver=v5.6.5 [5.6: THE BETTER SCRIPT UPDATE - PART 2 -]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
@@ -1153,11 +1153,11 @@ SET app=org.lineageos.jelly
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% Administrador de clientes concetados en Hotspot en HavocOS
+echo %T.D% Administrador de clientes concetados en Hotspot en HavocOS
 SET app=com.android.softap
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 echo %T.U% DuckDuckGo
 SET app=com.duckduckgo.mobile.android
@@ -1248,13 +1248,13 @@ SET app=com.android.faceunlock
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% Touch Gestures de HavocOS 4.X
+echo %T.D% Touch Gestures de HavocOS 4.X
 SET app=com.android.touch.gestures
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
-echo %T.U% Pantalla Ambiente de HavocOS 4.X
+echo %T.D% Pantalla Ambiente de HavocOS 4.X
 SET app=com.custom.ambient.display
 %C.FS% %app% >nul 2>nul
 %C.DK% %app% >nul 2>nul
@@ -1297,11 +1297,6 @@ echo (i) Algunas ROMs la incluyen, como LineageOS desde 19.1+
 :G7StockMotoCam1
 echo %T.U% Moto Camera 2
 SET app=com.motorola.camera2
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-SET app=com.motorola.camera2.tunner
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -1383,7 +1378,7 @@ SET app=com.motorola.motodisplay
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% Modo Demostracion
+echo %T.U% y %T.D% Modo Demostracion
 SET app=com.motorola.demo
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
@@ -1392,7 +1387,7 @@ SET app=com.motorola.demo
 SET app=com.motorola.demo.env
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 echo %T.U% Prefijo Facil
 SET app=com.motorola.easyprefix
@@ -1435,11 +1430,16 @@ SET app=com.motorola.imagertuning_lake
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% RadioFM
-SET app=com.motorola.android.fmradio
+SET app=com.motorola.camera2.tunner
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
+
+echo %T.U% Moto RadioFM
+SET app=com.motorola.android.fmradio
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 echo %T.U% Tutorial de navegacion por gestos
 SET app=com.motorola.gesture
@@ -1516,12 +1516,12 @@ SET app=com.motorola.brapps
 SET app=com.motorola.ccc.devicemanagement
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.ccc.notification
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.comcast.settings.extensions
 %C.FS% %app% >nul 2>nul
@@ -1596,32 +1596,27 @@ SET app=com.lmi.motorola.rescuesecurity
 SET app=com.motorola.android.jvtcmd
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.android.nativedropboxagent
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.appdirectedsmsproxy
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.bach.modemstats
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.bug2go
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-SET app=com.motorola.camera2.tunner
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.callredirectionservice
 %C.FS% %app% >nul 2>nul
@@ -1636,7 +1631,7 @@ SET app=com.motorola.carriersettingsext
 SET app=com.motorola.ccc.mainplm
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.config.wifi
 %C.FS% %app% >nul 2>nul
@@ -1661,7 +1656,7 @@ SET app=com.motorola.motocare
 SET app=com.motorola.motocare.internal
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.omadm.service
 %C.FS% %app% >nul 2>nul
@@ -1681,17 +1676,17 @@ SET app=com.motorola.pgmsystem2
 SET app=com.motorola.slpc_sys
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.systemserver
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.vzw.pco.extensions.pcoreceiver
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.qualcomm.atfwd
 %C.FS% %app% >nul 2>nul
@@ -1706,7 +1701,7 @@ SET app=com.qualcomm.embms
 SET app=com.qualcomm.qti.uim
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.VirtualUiccPayment
 %C.FS% %app% >nul 2>nul
@@ -1721,7 +1716,7 @@ SET app=org.codeaurora.ims
 SET app=vendor.qti.iwlan
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.invisiblenet
 %C.FS% %app% >nul 2>nul
@@ -1736,7 +1731,7 @@ SET app=com.motorola.entitlement
 SET app=com.qualcomm.wfd.service
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 ::-------------------------------------------------- EXPERIMENTAL APPS
 :ExtremeDebloat
@@ -3456,6 +3451,10 @@ echo [5.6.4]
 echo 	- Ahora se deshabilitan RadioFM, WallpaperBackup y LOS Gestos moto en vez de
 echo 	desinstalar para evitar problemas (Siempre intentan generar datos, vease el primer
 echo 	cambio de la version 5.3.1).
+echo [5.6.5]
+echo 	- Ahora se deshabilitan algunas apps de HavocOS 4.13 y Ocean Stock para evitar el
+echo 	problema mencionado en la version anterior.
+echo 	- Correcciones menores en el bat.
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
