@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.6.5 [5.6: THE BETTER SCRIPT UPDATE - PART 2 -]
+SET Ver=v5.7 [5.7: #HanoipSupremacy]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
@@ -18,7 +18,7 @@ echo Necesitas meter este bat en tu carpeta de platform-tools o tener adb en el 
 %.%
 %.%
 %CatCut%
-echo Moto G7 Power (Ocean) ADB App Debloater.
+echo Moto G7 Power (Ocean) And Moto G60 (Hanoip) ADB App Debloater.
 echo Para Stock y Custom ROMS (Que he probado).
 echo Testeado y hecho por @JosFlix7.
 %LineCut%
@@ -414,12 +414,6 @@ SET app=com.google.android.printservice.recommendation
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% Virgin Etiquetas NFC
-SET app=com.google.android.tag
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
 echo %T.U% Google Exchange Services
 SET app=com.google.android.gm.exchange
 %C.FS% %app% >nul 2>nul
@@ -611,7 +605,7 @@ SET app=com.android.calculator2
 %LineCut%
 echo %Q.U% RadioFM?
 %QYN%
-	if ERRORLEVEL 2 goto CoreGallery
+	if ERRORLEVEL 2 goto CoreNFC
 	if ERRORLEVEL 1 goto CoreFM1
 
 :CoreFM1
@@ -621,7 +615,45 @@ SET app=com.android.fmradio
 %C.CP% %app% >nul 2>nul
 %C.D% %app% >nul 2>nul
 
+SET app=com.caf.fmradio
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 SET app=com.android.fmradio.recordings
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:CoreNFC
+%.%
+%LineCut%
+echo %Q.U% NFC?
+%QYN%
+	if ERRORLEVEL 2 goto CoreGallery
+	if ERRORLEVEL 1 goto CoreNFC1
+
+:CoreNFC1
+echo %T.U% Servicio NFC
+SET app=com.android.nfc
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Servicios NFC de Motorola
+SET app=com.motorola.nfc
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Chad Etiquetas NFC
+SET app=com.android.apps.tag
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Virgin Etiquetas NFC
+SET app=com.google.android.tag
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -746,12 +778,6 @@ SET app=com.android.musicfx
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% Servicio NFC
-SET app=com.android.nfc
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
 echo %T.U% Servicio de impresion recomendado
 SET app=com.android.printservice.recommendation
 %C.FS% %app% >nul 2>nul
@@ -806,12 +832,6 @@ SET app=com.android.cellbroadcastservice
 
 echo %T.U% Protector de pantalla de Fotos
 SET app=com.android.dreams.phototable
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-echo %T.U% Chad Etiquetas NFC
-SET app=com.android.apps.tag
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -1108,7 +1128,7 @@ SET app=io.chaldeaprjkt.gamespace.auto_generated_rro_product__
 :LineageUpdater
 %.%
 %LineCut%
-echo %Q.U% LineageOS Updater?
+echo %Q.U% Updater de ROMs?
 %QYN%
 	if ERRORLEVEL 2 goto LineageStuff
 	if ERRORLEVEL 1 goto LineageUpdater1
@@ -1116,6 +1136,17 @@ echo %Q.U% LineageOS Updater?
 :LineageUpdater1
 echo %T.U% LineageOS Updater
 SET app=org.lineageos.updater
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Updater de HavocOS 4.X
+SET app=com.havoc.updater
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.havoc.updater.overlay
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -1258,17 +1289,6 @@ echo %T.D% Pantalla Ambiente de HavocOS 4.X
 SET app=com.custom.ambient.display
 %C.FS% %app% >nul 2>nul
 %C.DK% %app% >nul 2>nul
-
-echo %T.U% Actualizador de HavocOS 4.X
-SET app=com.havoc.updater
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-SET app=com.havoc.updater.overlay
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
 
 ::-------------------------------------------------- MOTO STOCK g7 POWER APPS
 :G7Stock
@@ -1449,12 +1469,6 @@ SET app=com.motorola.gesture
 
 echo %T.U% Desbloqueo Facial
 SET app=com.motorola.faceunlock
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-echo %T.U% Servicios NFC
-SET app=com.motorola.nfc
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -3455,6 +3469,10 @@ echo [5.6.5]
 echo 	- Ahora se deshabilitan algunas apps de HavocOS 4.13 y Ocean Stock para evitar el
 echo 	problema mencionado en la version anterior.
 echo 	- Correcciones menores en el bat.
+echo [5.7] - #HanoipSupremacy
+echo 	- Adicion de RadioFM CAF de Hanoip en LOS 20
+echo 	- Eliminacion opcional de NFC
+echo 	- Eliminacion opcional de Updaters de ROMs
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
