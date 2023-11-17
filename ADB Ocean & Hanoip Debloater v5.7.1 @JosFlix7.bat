@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.7 [5.7: #HanoipSupremacy]
+SET Ver=v5.7.1 [5.7: #HanoipSupremacy]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
@@ -57,7 +57,7 @@ echo  - Bootloop en HavocOS 4.X SOLO VERSION GAPPS.
 echo    * La version vanilla no tiene este problema.
 %.%
 echo  - Desactivar Android System Intelligence en ROMs Android 13 QPR1 provocara crash al
-echo 	querer entrar a "Ajustes/Notificaciones."
+echo 	querer entrar a "Ajustes/Notificaciones." Solo pasa en ROMs con Gapps incluidas.
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
@@ -513,6 +513,46 @@ SET app=com.google.android.wfcactivation
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
+SET app=com.google.android.apps.googleassistant
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.apps.subscriptions.red
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.apps.youtube.music
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.apps.youtube.music.setupwizard
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.apps.carrier.carrierwifi
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.cellbroadcastreceiver
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.cellbroadcastservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.settings.overlay.filesgoogle
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 ::-------------------------------------------------- AOSP CORE APPS
 :Core
 %.%
@@ -955,6 +995,16 @@ SET app=com.android.launcher3.overlay
 %C.CP% %app% >nul 2>nul
 %C.D% %app% >nul 2>nul
 
+SET app=com.android.cellbroadcast.overlay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.cellbroadcastservice.overlay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 ::-------------------------------------------------- LINEAGE AND EXTRA ROM APPS
 :Lineage
 %.%
@@ -1290,7 +1340,7 @@ SET app=com.custom.ambient.display
 %C.FS% %app% >nul 2>nul
 %C.DK% %app% >nul 2>nul
 
-::-------------------------------------------------- MOTO STOCK g7 POWER APPS
+::-------------------------------------------------- MOTO STOCK G7 POWER & HANOIP APPS
 :G7Stock
 %.%
 %.%
@@ -1298,7 +1348,7 @@ SET app=com.custom.ambient.display
 %.%
 %.%
 %CatCut%
-echo MOTO APPS - Para Stock ROM Moto G7 Power (Android 10) Y ROMS Con Moto Apps.
+echo MOTO APPS - Para Stock ROM Moto G7 Power (Android 10), Stock ROM Moto G60 (Android 12) Y ROMS Con Moto Apps.
 %CatCut%
 echo %Q.U% Apps Moto?
 %QYN%
@@ -1321,13 +1371,24 @@ SET app=com.motorola.camera2
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
+echo %T.U% Optimizador de la camara Moto 2
+SET app=com.motorola.imagertuning_lake
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.camera2.tunner
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 :G7StockWallPicker
 %.%
 %LineCut%
 echo %Q.U% Fondos de pantalla y Estilos?
-echo ADVERTENCIA: Escoga "Y" si estas en Stock. Escoga "N" si estas en una custom ROM.
+echo ADVERTENCIA: Escoga "Y" si estas en Stock Ocean. Escoga "N" si estas en una custom ROM o Stock Hanoip.
 %QYN%
-	if ERRORLEVEL 2 goto G7StockTrash
+	if ERRORLEVEL 2 goto G7StockActions
 	if ERRORLEVEL 1 goto G7StockWallPicker1
 
 :G7StockWallPicker1
@@ -1339,6 +1400,63 @@ SET app=com.android.wallpaper
 
 echo %T.U% Estilos y fondos de pantalla
 SET app=com.google.android.apps.wallpaper
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:G7StockActions
+%.%
+%LineCut%
+echo %Q.U% Acciones Moto?
+%QYN%
+	if ERRORLEVEL 2 goto G60GameTime
+	if ERRORLEVEL 1 goto G7StockActions1
+
+:G7StockActions1
+echo %T.U% Moto App
+SET app=com.motorola.moto
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Acciones Moto
+SET app=com.motorola.actions
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Servidor del sistema Moto
+SET app=com.motorola.systemserver
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
+
+:G60GameTime
+%.%
+%LineCut%
+echo %Q.U% Moto Game Time?
+%QYN%
+	if ERRORLEVEL 2 goto G7StockMotoDisplay
+	if ERRORLEVEL 1 goto G60GameTime1
+
+:G60GameTime1
+echo %T.U% Moto GameTime
+SET app=com.motorola.gamemode
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:G7StockMotoDisplay
+%.%
+%LineCut%
+echo %Q.U% Moto Game Time?
+%QYN%
+	if ERRORLEVEL 2 goto G7StockTrash
+	if ERRORLEVEL 1 goto G7StockMotoDisplay1
+
+:G7StockMotoDisplay1
+echo %T.U% Pantalla Moto
+SET app=com.motorola.motodisplay
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -1380,24 +1498,6 @@ SET app=com.lenovo.lsf.user
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% Moto App
-SET app=com.motorola.moto
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-echo %T.U% Acciones Moto
-SET app=com.motorola.actions
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-echo %T.U% Pantalla Moto
-SET app=com.motorola.motodisplay
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
 echo %T.U% y %T.D% Modo Demostracion
 SET app=com.motorola.demo
 %C.FS% %app% >nul 2>nul
@@ -1421,6 +1521,12 @@ SET app=com.motorola.email
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
+echo %T.U% Moto Live Wallpaper 3
+SET app=com.motorola.livewallpaper3
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 echo %T.U% RadioFM UI
 SET app=com.motorola.fmplayer
 %C.FS% %app% >nul 2>nul
@@ -1440,17 +1546,6 @@ SET app=com.motorola.help
 
 echo %T.U% Moto Setup Wizard (Creo)
 SET app=com.motorola.setup
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-echo %T.U% Optimizador de la camara Moto
-SET app=com.motorola.imagertuning_lake
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-SET app=com.motorola.camera2.tunner
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -1692,11 +1787,6 @@ SET app=com.motorola.slpc_sys
 %C.CP% %app% >nul 2>nul
 %C.D% %app% >nul 2>nul
 
-SET app=com.motorola.systemserver
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.D% %app% >nul 2>nul
-
 SET app=com.motorola.vzw.pco.extensions.pcoreceiver
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
@@ -1917,6 +2007,11 @@ SET app=com.android.theme.icon.roundedhexagon
 %C.U% %app% >nul 2>nul
 
 SET app=com.android.theme.icon.stretched
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.icon.round
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -2806,6 +2901,21 @@ SET app=com.android.theme.font.slateforoneplus
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
+SET app=com.android.theme.font.ArchivoSemiBold
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.RobotoSlabRegular
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.RookeryRegular
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 ::----- FUENTES DE LA PANTALLA DE BLOQUEO
 echo %T.U% Fuentes de la pantalla de bloqueo de Android 13+
 SET app=com.android.theme.lockscreen_clock_font.accuratist
@@ -3473,6 +3583,11 @@ echo [5.7] - #HanoipSupremacy
 echo 	- Adicion de RadioFM CAF de Hanoip en LOS 20
 echo 	- Eliminacion opcional de NFC
 echo 	- Eliminacion opcional de Updaters de ROMs
+echo [5.7.1]
+echo 	- Adicion de paquetes extra de Google incluidos en Stock ROM de Hanoip
+echo 	- Adicion de paquetes extra de Motorola incluidos en Stock ROM de Hanoip
+echo 	- Eliminacion opcional de Acciones Moto y Pantalla Moto
+echo 	- Adicion opcional de Moto GameTime
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
