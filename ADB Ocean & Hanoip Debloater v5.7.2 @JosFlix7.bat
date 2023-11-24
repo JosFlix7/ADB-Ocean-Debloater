@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.7.1 [5.7: #HanoipSupremacy]
+SET Ver=v5.7.2 [5.7: #HanoipSupremacy]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
@@ -27,7 +27,7 @@ echo para mi uso personal y deshabilita cosas que yo no uso.
 %LineCut%
 echo (i) - Se te preguntara en algunas partes si quieres continuar o no con un conjunto de Apps.
 %LineCut%
-echo Compartido para el grupo @MotoG7PowerES en Telegram.
+echo Compartido para el grupo @MotoG7PowerES y @MotoG60ES en Telegram.
 %LineCut%
 echo %ver%
 %CatCut%
@@ -338,12 +338,103 @@ SET app=com.google.android.apps.maps
 echo %Q.U% Google Sound Picker?
 echo (i) A veces las ROMs con Gapps incluidas lo usan por defecto.
 %QYN%
-	if ERRORLEVEL 2 goto GappsPixel
+	if ERRORLEVEL 2 goto GappsWell
 	if ERRORLEVEL 1 goto GappsSoundPicker1
 
 :GappsSoundPicker1
 echo %T.U% Google Sound Picker
 SET app=com.google.android.soundpicker
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:GappsWell
+%.%
+%LineCut%
+echo %Q.U% Bienestar Digital?
+%QYN%
+	if ERRORLEVEL 2 goto GappsBasic
+	if ERRORLEVEL 1 goto GappsWell1
+
+:GappsWell1
+echo %T.U% Bienestar Digital
+SET app=com.google.android.apps.wellbeing
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:GappsBasic
+%.%
+%LineCut%
+echo %Q.U% Apps basicas de Google? (Fotos, Fotos Go, Files, Talkback, Lens, Servicios de Voz.)
+%QYN%
+	if ERRORLEVEL 2 goto GappsYouTube
+	if ERRORLEVEL 1 goto GappsBasic1
+
+:GappsBasic1
+echo %T.U% Google Gallery Go
+SET app=com.google.android.apps.photosgo
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Google Files
+SET app=com.google.android.apps.nbu.files
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.settings.overlay.filesgoogle
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Google Fotos
+SET app=com.google.android.apps.photos
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Google TalkBack
+SET app=com.google.android.marvin.talkback
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Lens
+SET app=com.google.ar.lens
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Servicios de voz de Google
+SET app=com.google.android.tts
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:GappsYouTube
+%.%
+%LineCut%
+echo %Q.U% YouTube y YouTube Music?
+%QYN%
+	if ERRORLEVEL 2 goto GappsPixel
+	if ERRORLEVEL 1 goto GappsYouTube1
+
+:GappsYouTube1
+echo %T.U% YouTube
+SET app=com.google.android.youtube
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% YouTube Music
+SET app=com.google.android.apps.youtube.music
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.apps.youtube.music.setupwizard
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -363,12 +454,6 @@ SET app=com.google.android.projection.gearhead
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% Bienestar Digital
-SET app=com.google.android.apps.wellbeing
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
 echo %T.U% Device Health Services
 SET app=com.google.android.apps.turbo
 %C.FS% %app% >nul 2>nul
@@ -377,12 +462,6 @@ SET app=com.google.android.apps.turbo
 
 echo %T.U% Historial de ubicaciones de Google
 SET app=com.google.android.gms.location.history
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-echo %T.U% Servicios de voz de Google
-SET app=com.google.android.tts
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -398,6 +477,12 @@ SET app=com.google.android.apps.safetyhub
 %LineCut%
 echo %T.U% Google Carrier Services
 SET app=com.google.android.ims
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Google Carrier Settings
+SET app=com.google.android.carrier
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -426,24 +511,6 @@ SET app=com.google.android.markup
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% Google Gallery Go
-SET app=com.google.android.apps.photosgo
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-echo %T.U% Google Files
-SET app=com.google.android.apps.nbu.files
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-echo %T.U% Google Fotos
-SET app=com.google.android.apps.photos
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
 echo %T.U% Google Meet
 SET app=com.google.android.apps.tachyon
 %C.FS% %app% >nul 2>nul
@@ -452,12 +519,6 @@ SET app=com.google.android.apps.tachyon
 
 echo %T.U% Google Feedback
 SET app=com.google.android.feedback
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-echo %T.U% Google TalkBack
-SET app=com.google.android.marvin.talkback
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -474,20 +535,8 @@ SET app=com.google.android.videos
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% YouTube
-SET app=com.google.android.youtube
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
 echo %T.U% Servicios de AR de Google
 SET app=com.google.ar.core
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-echo %T.U% Lens
-SET app=com.google.ar.lens
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -523,16 +572,6 @@ SET app=com.google.android.apps.subscriptions.red
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-SET app=com.google.android.apps.youtube.music
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-SET app=com.google.android.apps.youtube.music.setupwizard
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
 SET app=com.google.android.apps.carrier.carrierwifi
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
@@ -544,11 +583,6 @@ SET app=com.google.android.cellbroadcastreceiver
 %C.U% %app% >nul 2>nul
 
 SET app=com.google.android.cellbroadcastservice
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
-SET app=com.android.settings.overlay.filesgoogle
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -1361,7 +1395,7 @@ echo %Q.U% Apps Moto?
 echo %Q.U% Moto Camera 2?
 echo (i) Algunas ROMs la incluyen, como LineageOS desde 19.1+
 %QYN%
-	if ERRORLEVEL 2 goto G7StockWallPicker
+	if ERRORLEVEL 2 goto G60MotoCam
 	if ERRORLEVEL 1 goto G7StockMotoCam1
 
 :G7StockMotoCam1
@@ -1378,6 +1412,27 @@ SET app=com.motorola.imagertuning_lake
 %C.U% %app% >nul 2>nul
 
 SET app=com.motorola.camera2.tunner
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:G60MotoCam
+%.%
+%LineCut%
+echo %Q.U% Moto Camera 3?
+%QYN%
+	if ERRORLEVEL 2 goto G7StockWallPicker
+	if ERRORLEVEL 1 goto G60MotoCam1
+
+:G60MotoCam1
+echo %T.U% Moto Camera 3
+SET app=com.motorola.camera2
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Optimizador de la camara
+SET app=com.motorola.imagertuning_V2
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -1435,6 +1490,7 @@ SET app=com.motorola.systemserver
 %.%
 %LineCut%
 echo %Q.U% Moto Game Time?
+echo (i) No funcionara sin las acciones moto
 %QYN%
 	if ERRORLEVEL 2 goto G7StockMotoDisplay
 	if ERRORLEVEL 1 goto G60GameTime1
@@ -1449,14 +1505,47 @@ SET app=com.motorola.gamemode
 :G7StockMotoDisplay
 %.%
 %LineCut%
-echo %Q.U% Moto Game Time?
+echo %Q.U% Pantalla Moto?
+echo (i) No funcionara correctamente sin las acciones moto
 %QYN%
-	if ERRORLEVEL 2 goto G7StockTrash
+	if ERRORLEVEL 2 goto G60Vol
 	if ERRORLEVEL 1 goto G7StockMotoDisplay1
 
 :G7StockMotoDisplay1
 echo %T.U% Pantalla Moto
 SET app=com.motorola.motodisplay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:G60Vol
+%.%
+%LineCut%
+echo %Q.U% Volumen Multitarea?
+echo (i) No funcionara correctamente sin las acciones moto
+%QYN%
+	if ERRORLEVEL 2 goto G60ForeCast
+	if ERRORLEVEL 1 goto G60Vol1
+
+:G60Vol1
+echo %T.U% Volumen Multitarea
+SET app=com.motorola.dynamicvolume
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:G60ForeCast
+%.%
+%LineCut%
+echo %Q.U% Desempeno Moto?
+echo (i) Funcion para precargar apps freecuentes en cache
+%QYN%
+	if ERRORLEVEL 2 goto G7StockTrash
+	if ERRORLEVEL 1 goto G60ForeCast1
+
+:G60ForeCast1
+echo %T.U% Desempeno Moto (Funcion para precargar en cache apps que se usan con frecuencia)
+SET app=com.motorola.appforecast
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -1472,6 +1561,12 @@ SET app=com.motorola.motosignature.app
 %C.U% %app% >nul 2>nul
 
 SET app=com.motorola.motosignature2.app
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Acceso para el operador Moto
+SET app=com.motorola.nfwlocationattribution
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -1503,6 +1598,12 @@ SET app=com.motorola.demo
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
+
+echo %T.U% Efectos de audio
+SET app=com.motorola.audiofx
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 SET app=com.motorola.demo.env
 %C.FS% %app% >nul 2>nul
@@ -1585,6 +1686,41 @@ SET app=com.android.internal.systemui.navbar.softonenav
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
+
+echo %T.U% Configuracion de escritorio de la camara
+SET app=com.motorola.motcameradesktop
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Editor de fotos Moto
+SET app=com.motorola.photoeditor
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Moto Intelligence
+SET app=com.motorola.motointelligence
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.motointelligence.overlay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Tutorial Motorola
+SET app=com.motorola.mototour
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.D% Moto Desktop SystemUI
+SET app=com.motorola.systemui.desk
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 echo %T.U% Apps y paquetes restantes...
 SET app=android.autoinstalls.config.motorola.layout
@@ -1836,6 +1972,26 @@ SET app=com.qualcomm.wfd.service
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.D% %app% >nul 2>nul
+
+SET app=com.motorola.wifi.motowifimetrics
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.launcherconfig
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
+
+SET app=com.motorola.telprov
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.revoker.services
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
 
 ::-------------------------------------------------- EXPERIMENTAL APPS
 :ExtremeDebloat
@@ -2561,7 +2717,7 @@ SET app=com.android.theme.color.pixelblue
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-::----- ICONOS DE SEÑAL
+::----- ICONOS DE SENAL
 echo %T.U% Iconos de Senal Movil
 SET app=com.android.systemui.signalbar_a
 %C.FS% %app% >nul 2>nul
@@ -3558,9 +3714,11 @@ echo 	- Adicion de otra variable de linea divisora mas pequena.
 echo 	- Cambios menores en el apartado de despedida cuando el usuario desea salir/no hay ADB.
 echo 	- Cambios menores en el apartado de problemas conocidos.
 echo 	- Adicion de separacion extra entre versiones del changelog.
+%.%
 echo [5.6.2]
 echo 	- Corregido bug que no permitia desinstalar algunos Overlays en ExtremeDebloat.
 echo 	- Eliminada la opcion test para mostrar la ventana de error cuando no se encuentra ADB.
+%.%
 echo [5.6.3]
 echo 	- Adicion de colores de acento de LineageOS 18.1.
 echo 	- Adicion de LineageOS Profiles en ExtremeDebloat.
@@ -3571,23 +3729,34 @@ echo 	- Adicion de paquetes extras de ArrowOS 11.
 echo 	- Adicion de paquetes extras de LineageOS 20 QPR3 (12 Agosto 2023).
 echo 	- Adicion de Qualcomm WFD Service.
 echo 	- Correcciones menores en el bat.
+%.%
 echo [5.6.4]
 echo 	- Ahora se deshabilitan RadioFM, WallpaperBackup y LOS Gestos moto en vez de
 echo 	desinstalar para evitar problemas (Siempre intentan generar datos, vease el primer
 echo 	cambio de la version 5.3.1).
+%.%
 echo [5.6.5]
 echo 	- Ahora se deshabilitan algunas apps de HavocOS 4.13 y Ocean Stock para evitar el
 echo 	problema mencionado en la version anterior.
 echo 	- Correcciones menores en el bat.
+%.%
 echo [5.7] - #HanoipSupremacy
-echo 	- Adicion de RadioFM CAF de Hanoip en LOS 20
-echo 	- Eliminacion opcional de NFC
-echo 	- Eliminacion opcional de Updaters de ROMs
+echo 	- Adicion de RadioFM CAF de Hanoip en LOS 20.
+echo 	- Eliminacion opcional de NFC.
+echo 	- Eliminacion opcional de Updaters de ROMs.
+%.%
 echo [5.7.1]
-echo 	- Adicion de paquetes extra de Google incluidos en Stock ROM de Hanoip
-echo 	- Adicion de paquetes extra de Motorola incluidos en Stock ROM de Hanoip
-echo 	- Eliminacion opcional de Acciones Moto y Pantalla Moto
-echo 	- Adicion opcional de Moto GameTime
+echo 	- Adicion de paquetes extra de Google incluidos en Stock ROM de Hanoip.
+echo 	- Adicion de paquetes extra de Motorola incluidos en Stock ROM de Hanoip.
+echo 	- Eliminacion opcional de Acciones Moto y Pantalla Moto.
+echo 	- Adicion opcional de Moto GameTime.
+%.%
+echo [5.7.2]
+echo 	- Adicion de mas paquetes extra de Motorola y Google incluidos en Stock ROM de Hanoip.
+echo 	- Adiciom opcional de Volumen Multitarea de Moto.
+echo 	- Adicion opcional de Desempeno Moto (Funcion que precarga apps frecuentes en cache).
+echo 	- Adicion opcional de Camara Moto 3.
+echo 	- Eliminacion opcional de algunas apps de Google.
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
