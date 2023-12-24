@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.7.2 [5.7: #HanoipSupremacy]
+SET Ver=v5.7.3 [5.7: #HanoipSupremacy]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
@@ -1715,12 +1715,6 @@ SET app=com.motorola.mototour
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
-
-echo %T.D% Moto Desktop SystemUI
-SET app=com.motorola.systemui.desk
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.D% %app% >nul 2>nul
 
 echo %T.U% Apps y paquetes restantes...
 SET app=android.autoinstalls.config.motorola.layout
@@ -3757,6 +3751,9 @@ echo 	- Adiciom opcional de Volumen Multitarea de Moto.
 echo 	- Adicion opcional de Desempeno Moto (Funcion que precarga apps frecuentes en cache).
 echo 	- Adicion opcional de Camara Moto 3.
 echo 	- Eliminacion opcional de algunas apps de Google.
+%.%
+echo [5.7.3]
+echo 	- Eliminado Moto Desktop SystemUI debido a problemas con el QS en modo horizontal.
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
