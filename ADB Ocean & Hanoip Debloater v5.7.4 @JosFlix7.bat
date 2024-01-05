@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.7.3 [5.7: #HanoipSupremacy]
+SET Ver=v5.7.4 [5.7: #HanoipSupremacy]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
@@ -762,7 +762,23 @@ echo LineageOS 18.1 - 19.1 - 20 / HavocOS 4.X / Stock ROM Moto G7 Power.
 echo %Q.U% Apps AOSP?
 %QYN%
 	if ERRORLEVEL 2 goto Lineage
-	if ERRORLEVEL 1 goto AOSPVPN
+	if ERRORLEVEL 1 goto AOSPIMS
+
+:AOSPIMS
+%.%
+%LineCut%
+echo %Q.U% CodeAurora IMS?
+echo (i) Permite el uso de 4G LTE durante una llamada telefonica.
+%QYN%
+	if ERRORLEVEL 2 goto AOSPVPN
+	if ERRORLEVEL 1 goto AOSPIMS1
+
+:AOSPIMS1
+echo %T.D% CodeAurora IMS
+SET app=org.codeaurora.ims
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.D% %app% >nul 2>nul
 
 :AOSPVPN
 %.%
@@ -1941,11 +1957,6 @@ SET app=com.motorola.VirtualUiccPayment
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
-
-SET app=org.codeaurora.ims
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.D% %app% >nul 2>nul
 
 SET app=vendor.qti.iwlan
 %C.FS% %app% >nul 2>nul
@@ -3754,6 +3765,8 @@ echo 	- Eliminacion opcional de algunas apps de Google.
 %.%
 echo [5.7.3]
 echo 	- Eliminado Moto Desktop SystemUI debido a problemas con el QS en modo horizontal.
+echo [5.7.4]
+echo 	- Eliminacion opcional de CodeAurora IMS.
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
