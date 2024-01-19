@@ -1,3 +1,6 @@
+# VERSION 5.7.5
+Fecha: 18/01/24
+
 # ADB OCEAN & HANOIP DEBLOATER
 Este es un bat script para eliminar apps del sistema sin necesidad de tener root o el bootloader desbloqueado.
 * Se te preguntará en algunos casos si deseas eliminar una app.

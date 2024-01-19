@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.7.4 [5.7: #HanoipSupremacy]
+SET Ver=v5.7.5 [5.7: #HanoipSupremacy]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
@@ -19,7 +19,7 @@ echo Necesitas meter este bat en tu carpeta de platform-tools o tener adb en el 
 %.%
 %CatCut%
 echo Moto G7 Power (Ocean) And Moto G60 (Hanoip) ADB App Debloater.
-echo Para Stock y Custom ROMS (Que he probado).
+echo Para Stock y Custom ROMS que he probado.
 echo Testeado y hecho por @JosFlix7.
 %LineCut%
 echo NO ME HAGO RESPONSABLE si tienes Bootloop o algo male sal, ya que hice esta lista
@@ -58,6 +58,10 @@ echo    * La version vanilla no tiene este problema.
 %.%
 echo  - Desactivar Android System Intelligence en ROMs Android 13 QPR1 provocara crash al
 echo 	querer entrar a "Ajustes/Notificaciones." Solo pasa en ROMs con Gapps incluidas.
+%.%
+echo  - Desactivar Moto LiveWallpaper3, Moto Gallery y todos los fondos animados causa crash
+echo  al querer cambiar el fondo en MYUI 5 China.
+echo   * Restaurar estas apps soluciona el problema.
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
@@ -204,7 +208,7 @@ SET app=com.google.android.setupwizard
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-echo %T.U% One Time Initializer (Se inicia junto al SetupWizard)
+echo %T.U% One Time Initializer
 SET app=com.android.onetimeinitializer
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
@@ -756,8 +760,6 @@ SET app=com.android.calendar
 %.%
 %CatCut%
 echo AOSP COMMON FULL DEBLOAT.
-echo TESTED IN:
-echo LineageOS 18.1 - 19.1 - 20 / HavocOS 4.X / Stock ROM Moto G7 Power.
 %CatCut%
 echo %Q.U% Apps AOSP?
 %QYN%
@@ -817,7 +819,7 @@ SET app=com.android.wallpaper.livepicker
 %.%
 %LineCut%
 echo %Q.U% Sugerencias de configuracion?
-echo (i) Barra de busqueda de los Ajustes, quitarlo dara crash al tocar la barra o puede ni aparezca.
+echo (i) Barra de busqueda de los Ajustes, quitarlo dara crash al tocar la barra o puede no aparecer.
 %QYN%
 	if ERRORLEVEL 2 goto AOSPGeneral
 	if ERRORLEVEL 1 goto AOSPSett1
@@ -1453,6 +1455,12 @@ SET app=com.motorola.imagertuning_V2
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
+echo %T.U% IA de la camara
+SET app=com.motorola.camera3.content.ai
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 :G7StockWallPicker
 %.%
 %LineCut%
@@ -1500,7 +1508,13 @@ echo %T.U% Servidor del sistema Moto
 SET app=com.motorola.systemserver
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
-%C.D% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% Ajustes de Motorola
+SET app=com.motorola.coresettingsext
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
 
 :G60GameTime
 %.%
@@ -1732,6 +1746,13 @@ SET app=com.motorola.mototour
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
+echo %T.U% Moto Ready For
+SET app=com.motorola.mobiledesktop
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+::----- MYUi GLobal
 echo %T.U% Apps y paquetes restantes...
 SET app=android.autoinstalls.config.motorola.layout
 %C.FS% %app% >nul 2>nul
@@ -1893,11 +1914,6 @@ SET app=com.motorola.config.wifi
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-SET app=com.motorola.coresettingsext
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
 SET app=com.motorola.lifetimedata
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
@@ -1994,6 +2010,388 @@ SET app=com.motorola.telprov
 %C.U% %app% >nul 2>nul
 
 SET app=com.motorola.revoker.services
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.hotwordenrollment.okgoogle
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.hotwordenrollment.xgoogle
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.help.extlog
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.motolights
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.leanbacklauncher
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.smart5g
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.securevault
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.securityhub
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.spaces
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.aura.oobe.motorola
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.audiorecorder
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.overlay.crystaltalkai
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+::----- MYUi China
+echo %T.U% Apps y paquetes restantes de MYUi China...
+SET app=com.qualcomm.simcontacts
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.tencent.soter.soterserver
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.wapi.wapicertmanage
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=org.ifaa.aidl.manager
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.qualcomm.qti.dynamicddsservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.qualcomm.qti.uimGbaApp
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.providers.settings.resources.overlay.NfcPrcWalletOverlayProduct
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.traceur.auto_generated_rro_product__
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.wifi.resources.overlay.WifiResOnlyForPrc
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:: SET app=com.baidu.map.location
+:: %C.FS% %app% >nul 2>nul
+:: %C.CP% %app% >nul 2>nul
+:: %C.U% %app% >nul 2>nul
+
+SET app=com.cmcc.csserver
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.cmcc.csu
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.cmcc.gbaserver
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.carrier.prc.overlay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.overlay.gmsconfig.china
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.lenovo.leos.cloud.sync
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.lenovo.leos.cloud.sync.overlay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.lenovo.lsf
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.lenovo.lsf.device
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.actions.overlayprc
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.adaptivebrightness
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.airgesture
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.airgesture.incall
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.coresettingsext.overlay.doubletap
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.launcher.overlay.china
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.networkstack.overlay.retcn
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.overlay.china
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.overlay.livewallpapers.alloy_drift
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.providers.settings.overlay.china
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.settings.overlay.prc.wallet
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.systemui.overlay.cmcc
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.systemui.overlay.ctcn
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.systemui.overlay.cucn
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.systemui.overlay.retcn
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.deskclock
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.devicemigration
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.emergency
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.emergency.auto_generated_rro_product__
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.gallery
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.nfcagent
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.prcactivation
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.prcactivation.auto_generated_rro_product__
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.prcsettingsext
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.searchintelligence
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.setupwizard
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.smartservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.cn.trip
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.dciservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.enterprise.service
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.hce
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.launcher.iconpack.moto
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.livewallpaper3.prebuilt.chroma_plume
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.livewallpaper3.prebuilt.sunlit_smile
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.livewallpaper3.prebuilt.titan
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.myscreen
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.overlay.voicetranslation
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.qualcomm.qti.xrcb
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.qualcomm.qtil.btdsda
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.ted.number
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.zui.antitheft
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.zui.deviceidservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.zui.filemanager
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.zui.sdac
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.zui.xlog
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -3077,6 +3475,116 @@ SET app=com.android.theme.font.RookeryRegular
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
+SET app=com.android.theme.font.antipastopro
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.cooljazz
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.customizesource
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.evolvesans
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.Exo2Regular
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.fluidsans
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.fucek
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.hanyiqiheisource
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.inter
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.jtleonor
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.lemonmilk
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.manrope
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.misans
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.oduda
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.oneuisans
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.opposans
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.pangyaersource
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.productsansvh
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.roboto
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.sanfrancisco
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.simpleday
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.android.theme.font.zhongsongsource
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 ::----- FUENTES DE LA PANTALLA DE BLOQUEO
 echo %T.U% Fuentes de la pantalla de bloqueo de Android 13+
 SET app=com.android.theme.lockscreen_clock_font.accuratist
@@ -3263,6 +3771,12 @@ SET app=org.lineageos.overlay.customization.navbar.nohint
 
 echo %T.U% opcion para ocultar la pildora de navegacion en ROMs
 SET app=com.android.internal.systemui.navbar.nohint
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% opcion para ocultar la pildora de navegacion en Motorola Stock
+SET app=com.android.internal.systemui.navbar.hidegestural
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -3547,6 +4061,11 @@ SET app=com.arrow.overlay.statusbarstock
 echo Hemos terminado, reiniciar tu dispositivo es opcional.
 echo Recuerda que puedes reinstalar una app desde Play Store, con su APK o usando la opcion "restaurar".
 %CatCut%
+
+::----- Force Stop Moto Desktop SystemUI
+SET app=com.motorola.systemui.desk
+%C.FS% %app% >nul 2>nul
+
 echo Desea reiniciar su dispositivo?
 %QYN%
 	if ERRORLEVEL 2 goto No
@@ -3765,8 +4284,17 @@ echo 	- Eliminacion opcional de algunas apps de Google.
 %.%
 echo [5.7.3]
 echo 	- Eliminado Moto Desktop SystemUI debido a problemas con el QS en modo horizontal.
+%.%
 echo [5.7.4]
 echo 	- Eliminacion opcional de CodeAurora IMS.
+%.%
+echo [5.7.5]
+echo 	- Adicion de paquetes extra de Motorola incluidos en MYUi 5 (Android 13).
+echo 	- Eliminacion opcional de Ajustes de Motorola (Ahora incluido en seccion de gestos Moto).
+echo 	- Cambios menores en bat.
+echo 	- Adicion de paquetes extra de Motorola incluidos en MYUi 5 China (Android 13).
+echo 	- Ahora se fuerza detencion a Moto Desktop SystemUI para solucionar un bug con el QS en
+echo 	modo horizontal.
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
