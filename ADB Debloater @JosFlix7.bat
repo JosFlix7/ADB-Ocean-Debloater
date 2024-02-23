@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.7.5 [5.7: #HanoipSupremacy]
+SET Ver=v5.8 [5.8: ROG Phone 7 Initial Integration]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
@@ -18,7 +18,7 @@ echo Necesitas meter este bat en tu carpeta de platform-tools o tener adb en el 
 %.%
 %.%
 %CatCut%
-echo Moto G7 Power (Ocean) And Moto G60 (Hanoip) ADB App Debloater.
+echo Moto G7 Power (Ocean), Moto G60 (Hanoip) and Asus ROG Phone 7 ADB App Debloater.
 echo Para Stock y Custom ROMS que he probado.
 echo Testeado y hecho por @JosFlix7.
 %LineCut%
@@ -2074,6 +2074,66 @@ SET app=com.motorola.android.overlay.crystaltalkai
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
+SET app=com.motorola.discovery
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.overlay.googleasi
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.setup.auto_generated_rro_vendor__
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.setup.overlay.gabuttonrighttop
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.qualcomm.qti.remoteSimlockAuth
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.qualcomm.qti.xrvd.service
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.overlay.gmsconfig.personalsafety
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.safetycenter.resources
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.safetycenter.resources.overlay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.launcherconfig.overlay.tundra
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.coresettingsext.overlay.tundra
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.actions.overlay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 ::----- MYUi China
 echo %T.U% Apps y paquetes restantes de MYUi China...
 SET app=com.qualcomm.simcontacts
@@ -2396,6 +2456,61 @@ SET app=com.zui.xlog
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
+SET app=com.motorola.android.coresettingsext.overlay.prc
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.coresettingsext.overlay.rtwo
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.launcher.overlay.animation.scale
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.settings.overlay.fps.display
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.android.settings.overlay.prc
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.gesture.overlay.prc
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.moto.overlay.personalizelauncher
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.setup.auto_generated_rro_product__
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.setup.auto_generated_rro_vendor__
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=vendor.qti.qesdk.sysservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.motorola.deviceshield.engine
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
 ::-------------------------------------------------- EXPERIMENTAL APPS
 :ExtremeDebloat
 %.%
@@ -2410,7 +2525,7 @@ echo (i) Deshabilita y elimina Apps AOSP, LOS y de otras ROMs como la navegacion
 echo     overlays de personalizacion, entre otros.
 echo ESCOGA "Y" PARA CONTINUAR, O "N" PARA SALTAR ESTA SECCION.
 %QYN%
-	if ERRORLEVEL 2 goto Fin
+	if ERRORLEVEL 2 goto ROG7
 	if ERRORLEVEL 1 goto ExtremeDebloat3Button
 
 :ExtremeDebloat3Button
@@ -2423,7 +2538,7 @@ echo (i) Asegurate de tener habilitado al menos 1 modo de navegacion.
 	if ERRORLEVEL 1 goto ExtremeDebloat3Button1
 
 :ExtremeDebloat3Button1
-echo %T.U% navegacion de 3 botones.
+echo %T.U% Navegacion de 3 botones.
 SET app=com.android.internal.systemui.navbar.threebutton
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
@@ -2798,6 +2913,12 @@ SET app=com.android.theme.icon_pack.pui.systemui
 %C.U% %app% >nul 2>nul
 
 SET app=com.android.theme.icon_pack.pui.themepicker
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+echo %T.U% MYUi Moto Adaptive Icons
+SET app=com.motorola.launcher.iconpack.motoadaptive
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -3315,6 +3436,7 @@ SET app=com.android.theme.font.coolstory
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
+
 SET app=com.android.theme.font.exotwo
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
@@ -3979,7 +4101,7 @@ SET app=com.custom.overlay.systemui.gestural.medium
 :ExtremeDebloatStuff
 %.%
 %LineCut%
-echo %T.U% navegacion de 2 botones.
+echo %T.U% Navegacion de 2 botones.
 SET app=com.android.internal.systemui.navbar.twobutton
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
@@ -4046,6 +4168,455 @@ SET app=org.lineageos.snap.auto_generated_rro_vendor__
 %C.U% %app% >nul 2>nul
 
 SET app=com.arrow.overlay.statusbarstock
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+::-------------------------------------------------- ROG Apps
+:ROG7
+%.%
+%LineCut%
+echo %Q.U% Apps de Asus ROG Phone 7?
+echo (i) Esto es una version incial sin preguntas, debloteara por completo tu ROG Phone 7.
+echo     Proximamente se iran añadiendo apartados para poder escoger que eliminar.
+%QYN%
+	if ERRORLEVEL 2 goto Fin
+	if ERRORLEVEL 1 goto ROG7_Updater
+
+:ROG7_Updater
+%.%
+%LineCut%
+echo %Q.U% Actualizador del sistema?
+echo (i) No podras actualizar ni por OTA ni de forma manual.
+%QYN%
+	if ERRORLEVEL 2 goto ROG7_1
+	if ERRORLEVEL 1 goto ROG7_Updater1
+
+:ROG7_Updater1
+echo %T.U% Actualizador del sistema.
+SET app=com.asus.appupdater
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.dm
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+:ROG7_1
+echo %T.U% Apps de Asus, esto puede tomar tiempo.
+SET app=com.asus.ia.asusapp
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.soundrecorder
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.dsi.ant.server
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.qti.snapdragon.qdcm_ff
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.qualcomm.qti.devicestatisticsservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.alwayson
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ar.welcome
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.asusbacktap
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.asusoptiflex
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.asussettingsbackuphelper
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.audiowizard
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.auraaoaclient
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.cellbroadcastreceiver.overlay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.cellbroadcastservice.overlay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.configupdater
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ephotoburst
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.faceunlockservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.filemanager
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.gallery
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.gmotion
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.hbm
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.imagesearch
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.benchmarkblocker
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.brightnessservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.evtlog
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.extdispctrl
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.misc
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.observer
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.packageinstallerproxy
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.pointerproxy
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.rogafkservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.rogproxy
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.smartread
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.twinapps
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.watermark
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.inadvertentTouch
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.key_status
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.launcher.twinviewmode
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.livedemo
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.livedemoservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.livewallpaper.customizelivewallpaper
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.livewallpaper.rog7.bionicconsciousness
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.livewallpaper.rog7.darkmatterflow
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.loguploader
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.loguploaderproxy
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.nextapp
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.nextappcore
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.openbeta2
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.sarprotection
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.seconddisplayeditor
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.setupwizard
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.smartreading
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.splendid
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.stitchimage.service
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.sysmonitor
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.taskwidget
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.theme.color.asusui
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.theme.color.rog
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.themeapp
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.themepromotion
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.tips
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.twinapps
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.twinappsservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.visualmaster
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.zenmotion
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.dirac.acs
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.futuredial.asusdatatransfer
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.futuredial.asuslocalbackup
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.overlay.gmsconfig.asi
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.overlay.gmsconfig.geotz
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.tetheringentitlement
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.monotype.android.font.felbridge
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.monotype.android.font.manroperegular
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.monotype.android.font.rajdhanimedium
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.monotype.android.font.syndor
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.qti.qcc
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=android.autoinstalls.config.asus.pai
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.alwayson.res.overlay
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.wifiperfservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.qti.slaservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.asus.ims.asusoptiflexservice
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.overlay.gmsconfig.nosafetycenter
+%C.FS% %app% >nul 2>nul
+%C.CP% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
+
+SET app=com.google.android.overlay.gmsconfig.searchselector
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
@@ -4295,6 +4866,12 @@ echo 	- Cambios menores en bat.
 echo 	- Adicion de paquetes extra de Motorola incluidos en MYUi 5 China (Android 13).
 echo 	- Ahora se fuerza detencion a Moto Desktop SystemUI para solucionar un bug con el QS en
 echo 	modo horizontal.
+%.%
+echo [5.7.6]
+echo 	- Adicion de mas paquetes extras de Motorola Hanoip Stock ROM, MYUi 5 Global y China.
+%.%
+echo [5.8] - ROG Phone 7 Initial Integration
+echo	- Adicion de paquetes de Asus ROG Phone 7. Fase inicial, sin opciones de eliminacion.
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
