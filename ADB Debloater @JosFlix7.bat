@@ -1,5 +1,5 @@
 @echo off
-SET Ver=v5.8 [5.8: ROG Phone 7 Initial Integration]
+SET Ver=v5.8.1 [5.8: ROG Phone 7 Initial Integration]
 SET CatCut=echo ####################################################################################################
 SET LineCut=echo ----------------------------------------------------------------------------------------------------
 SET LineSep=echo ____________________
@@ -91,7 +91,7 @@ echo (i) A veces es mejor deshabilitar apps en vez de desinstalar ademas de no h
 SET T.U=Desinstalando
 SET Q.U=Desinstalar
 SET T.D=Deshabilitando
-SET C.U=adb wait-for-device uninstall --user 0
+SET C.U=adb wait-for-device shell pm uninstall --user 0
 SET C.D=adb wait-for-device shell cmd package disable-user --user 0
 SET C.DK=adb wait-for-device shell cmd package disable-user -k
 SET C.FS=adb wait-for-device shell am force-stop
@@ -333,8 +333,8 @@ echo %Q.U% Google Maps?
 :GappsMaps1
 echo %T.U% Maps
 SET app=com.google.android.apps.maps
-%C.FS% com.google.android.apps.maps >nul 2>nul
-%C.U% com.google.android.apps.maps >nul 2>nul
+%C.FS% %app% >nul 2>nul
+%C.U% %app% >nul 2>nul
 
 :GappsSoundPicker
 %.%
@@ -4351,11 +4351,6 @@ SET app=com.asus.ims.packageinstallerproxy
 %C.CP% %app% >nul 2>nul
 %C.U% %app% >nul 2>nul
 
-SET app=com.asus.ims.pointerproxy
-%C.FS% %app% >nul 2>nul
-%C.CP% %app% >nul 2>nul
-%C.U% %app% >nul 2>nul
-
 SET app=com.asus.ims.rogafkservice
 %C.FS% %app% >nul 2>nul
 %C.CP% %app% >nul 2>nul
@@ -4872,6 +4867,9 @@ echo 	- Adicion de mas paquetes extras de Motorola Hanoip Stock ROM, MYUi 5 Glob
 %.%
 echo [5.8] - ROG Phone 7 Initial Integration
 echo	- Adicion de paquetes de Asus ROG Phone 7. Fase inicial, sin opciones de eliminacion.
+%.%
+echo [5.8.1]
+echo 	- Se removio el paquete com.asus.pointerproxy (opcion para crear macros de Armoury Crate).
 %CatCut%
 echo Presiona cualquier tecla para regresar a la pregunta anterior...
 pause >nul
